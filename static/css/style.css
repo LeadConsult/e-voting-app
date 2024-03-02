@@ -1,0 +1,29 @@
+
+.card-img-top {
+    height: 100px; /* the height */
+    object-fit: cover;
+  }
+
+  .card {
+    background-color: #f8f9fa; /* Grey background color */
+    box-shadow: 0 4px 8px #0b0b0b1a; /* Shadow */
+    transition: transform 0.2s;
+    text-align: center;
+    cursor: pointer;
+  }
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(250, 6, 6, 0.721);
+  }
+  .card-img-top {
+    height: 200px; /* Set a fixed height for the images */
+    object-fit: cover;
+  }
+
+  .card-link {
+    text-decoration: none; /* Remove underline from the links */
+  }
+
+  .card-body {
+    height: 80px; /* Set a fixed height for the card bodies */
+  }

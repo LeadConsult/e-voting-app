@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote for Candidates</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        .candidate-image {
+            max-width: 100%;
+            height: auto;
+        }
+        .caption {
+            text-align: center;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        .candidate-card {
+            border: 2px solid transparent; /* Default border */
+            transition: border-color 0.3s ease-in-out; /* Smooth transition */
+        }
+        
+        .candidate-card:hover {
+            border-color: #007bff; /* Border color on hover */
+        }
+        
+        input[type="radio"]:checked + .candidate-card {
+            border-color: red; /* Border color for selected candidate */
+        }
+        
+    </style>
+</head>
+<body onload="window.history.forward();">
+    <div class="container p-4 my-5 border" style="background-color: rgba(255, 255, 255, 0.5);">
+        
+        <form action="/submit_vote" method="post" id="voteForm">
+        
+            <h2 class="mt-2 text-center bg-primary text-light p-2">Presidential Candidates</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <input type="radio" id="pres_candidate1" name="presidential_candidate" value="candidate1" hidden>
+                    <label for="pres_candidate1" class="candidate-card">
+                        <img src="static/img/placeholder.jpg" alt="Candidate 1" class="candidate-image">
+                        <div class="caption">Candidate 1</div>
+                    </label>
+                </div>
+                
+                <div class="col-md-4">
+                    <input type="radio" id="pres_candidate2" name="presidential_candidate" value="candidate2" hidden>
+                    <label for="pres_candidate2" class="candidate-card">
+                        <img src="static/img/placeholder.jpg" alt="Candidate 2" class="candidate-image">
+                        <div class="caption">Candidate 2</div>
+                    </label>
+                </div>
+                
+                <div class="col-md-4">
+                    <input type="radio" id="pres_candidate3" name="presidential_candidate" value="candidate3" hidden>
+                    <label for="pres_candidate3" class="candidate-card">
+                        <img src="static/img/placeholder.jpg" alt="Candidate 3" class="candidate-image">
+                        <div class="caption">Candidate 3</div>
+                    </label>
+                </div>
+                
+            </div>
+            <hr>
+
+            <h2 class="mt-2 text-center bg-primary text-light p-2">Vice Presidential Candidates</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <input type="radio" id="vp_candidate1" name="vice_presidential_candidate" value="candidate1" hidden>
+                    <label for="vp_candidate1" class="candidate-card">
+                        <img src="static/img/placeholder.jpg" alt="Candidate 1" class="candidate-image">
+                        <div class="caption">Candidate 1</div>
+                    </label>
+                </div>
+            
+                <div class="col-md-4">
+                    <input type="radio" id="vp_candidate2" name="vice_presidential_candidate" value="candidate2" hidden>
+                    <label for="vp_candidate2" class="candidate-card">
+                        <img src="static/img/placeholder.jpg" alt="Candidate 2" class="candidate-image">
+                        <div class="caption">Candidate 2</div>
+                    </label>
+                </div>
+                </div>
+            <hr>
+            
+            <h2 class="mt-2 text-center bg-primary text-light p-2">Secretary Candidates</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <input type="radio" id="sec_candidate1" name="secretary_candidate" value="candidate1" hidden>
+                    <label for="sec_candidate1" class="candidate-card">
+                        <img src="static/img/placeholder.jpg" alt="Candidate 1" class="candidate-image">
+                        <div class="caption">Candidate 1</div>
+                    </label>
+                </div>
+
+                <div class="col-md-4">
+                    <input type="radio" id="sec_candidate2" name="secretary_candidate" value="candidate2" hidden>
+                    <label for="sec_candidate2" class="candidate-card">
+                        <img src="static/img/placeholder.jpg" alt="Candidate 2" class="candidate-image">
+                        <div class="caption">Candidate 2</div>
+                    </label>
+                </div>
+            </div>
+            <hr>
+
+            <h2 class="mt-2 text-center bg-primary text-light p-2">Financial Secretary Candidates</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <input type="radio" id="fsec_candidate1" name="financial_secretary_candidate" value="candidate1" hidden>
+                    <label for="fsec_candidate1" class="candidate-card">
+                        <img src="static/img/placeholder.jpg" alt="Candidate 1" class="candidate-image">
+                        <div class="caption">Candidate 1</div>
+                    </label>
+                </div>
+
+                <div class="col-md-4">
+                    <input type="radio" id="fsec_candidate2" name="financial_secretary_candidate" value="candidate2" hidden>
+                    <label for="fsec_candidate2" class="candidate-card">
+                        <img src="static/img/placeholder.jpg" alt="Candidate 2" class="candidate-image">
+                        <div class="caption">Candidate 2</div>
+                    </label>
+                </div>
+
+                <div class="col-md-4">
+                    <input type="radio" id="fsec_candidate3" name="financial_secretary_candidate" value="candidate3" hidden>
+                    <label for="fsec_candidate3" class="candidate-card">
+                        <img src="static/img/placeholder.jpg" alt="Candidate 3" class="candidate-image">
+                        <div class="caption">Candidate 3</div>
+                    </label>
+                </div>
+            </div>
+            <hr>
+
+            <!-- Treasurer Candidates -->
+            <h2 class="mt-2 text-center bg-primary text-light p-2">Treasurer Candidates</h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <input type="radio" id="tre_candidate1" name="treasurer_candidate" value="candidate1" hidden>
+                    <label for="tre_candidate1" class="candidate-card">
+                        <img src="static/img/placeholder.jpg" alt="Candidate 1" class="candidate-image">
+                        <div class="caption">Candidate 1</div>
+                    </label>
+                </div>
+
+                <div class="col-md-3">
+                    <input type="radio" id="tre_candidate2" name="treasurer_candidate" value="candidate2" hidden>
+                    <label for="tre_candidate2" class="candidate-card">
+                        <img src="static/img/placeholder.jpg" alt="Candidate 2" class="candidate-image">
+                        <div class="caption">Candidate 2</div>
+                    </label>
+                </div>
+
+                <div class="col-md-3">
+                    <input type="radio" id="tre_candidate3" name="treasurer_candidate" value="candidate3" hidden>
+                    <label for="tre_candidate3" class="candidate-card">
+                        <img src="static/img/placeholder.jpg" alt="Candidate 3" class="candidate-image">
+                        <div class="caption">Candidate 3</div>
+                    </label>
+                </div>
+
+                <div class="col-md-3">
+                    <input type="radio" id="tre_candidate4" name="treasurer_candidate" value="candidate4" hidden>
+                    <label for="tre_candidate4" class="candidate-card">
+                        <img src="static/img/placeholder.jpg" alt="Candidate 4" class="candidate-image">
+                        <div class="caption">Candidate 4</div>
+                    </label>
+                </div>
+            </div>
+            <hr>
+
+            <!-- Sports Secretary Candidates -->
+            <h2 class="mt-2 text-center bg-primary text-light p-2">Sports Secretary Candidates</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <input type="radio" id="sport_candidate1" name="sports_secretary_candidate" value="candidate1" hidden>
+                    <label for="sport_candidate1" class="candidate-card">
+                        <img src="static/img/placeholder.jpg" alt="Candidate 1" class="candidate-image">
+                        <div class="caption">Candidate 1</div>
+                    </label>
+                </div>
+
+                <div class="col-md-4">
+                    <input type="radio" id="sport_candidate2" name="sports_secretary_candidate" value="candidate2" hidden>
+                    <label for="sport_candidate2" class="candidate-card">
+                        <img src="static/img/placeholder.jpg" alt="Candidate 2" class="candidate-image">
+                        <div class="caption">Candidate 2</div>
+                    </label>
+                </div>
+
+                <div class="col-md-4">
+                    <input type="radio" id="sport_candidate3" name="sports_secretary_candidate" value="candidate3" hidden>
+                    <label for="sport_candidate3" class="candidate-card">
+                        <img src="static/img/placeholder.jpg" alt="Candidate 3" class="candidate-image">
+                        <div class="caption">Candidate 3</div>
+                    </label>
+                </div>
+            </div>
+            <hr>
+
+            <!-- Social Secretary Candidates -->
+            <h2 class="mt-2 text-center bg-primary text-light p-2">Social Secretary Candidates</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <input type="radio" id="social_candidate1" name="social_secretary_candidate" value="candidate1" hidden>
+                    <label for="social_candidate1" class="candidate-card">
+                        <img src="static/img/placeholder.jpg" alt="Candidate 1" class="candidate-image">
+                        <div class="caption">Candidate 1</div>
+                    </label>
+                </div>
+
+                <div class="col-md-4">
+                    <input type="radio" id="social_candidate2" name="social_secretary_candidate" value="candidate2" hidden>
+                    <label for="social_candidate2" class="candidate-card">
+                        <img src="static/img/placeholder.jpg" alt="Candidate 2" class="candidate-image">
+                        <div class="caption">Candidate 2</div>
+                    </label>
+                </div>
+
+                <div class="col-md-4">
+                    <input type="radio" id="social_candidate3" name="social_secretary_candidate" value="candidate3" hidden>
+                    <label for="social_candidate3" class="candidate-card">
+                        <img src="static/img/placeholder.jpg" alt="Candidate 3" class="candidate-image">
+                        <div class="caption">Candidate 3</div>
+                    </label>
+                </div>
+            </div>
+            <hr>
+
+            <!-- Librarian Candidates -->
+            <h2 class="mt-2 text-center bg-primary text-light p-2">Librarian Candidates</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <input type="radio" id="lib_candidate1" name="librarian_candidate" value="candidate1" hidden>
+                    <label for="lib_candidate1" class="candidate-card">
+                        <img src="static/img/placeholder.jpg" alt="Candidate 1" class="candidate-image">
+                        <div class="caption">Candidate 1</div>
+                    </label>
+                </div>
+
+                <div class="col-md-4">
+                    <input type="radio" id="lib_candidate2" name="librarian_candidate" value="candidate2" hidden>
+                    <label for="lib_candidate2" class="candidate-card">
+                        <img src="static/img/placeholder.jpg" alt="Candidate 2" class="candidate-image">
+                        <div class="caption">Candidate 2</div>
+                    </label>
+                </div>
+
+                <div class="col-md-4">
+                    <input type="radio" id="lib_candidate3" name="librarian_candidate" value="candidate3" hidden>
+                    <label for="lib_candidate3" class="candidate-card">
+                        <img src="static/img/placeholder.jpg" alt="Candidate 3" class="candidate-image">
+                        <div class="caption">Candidate 3</div>
+                    </label>
+                </div>
+            </div>
+            <hr>
+
+            <input type="hidden" value="{{ token }}" id="token" name="token">
+            <!-- Submit Button -->
+            <div class="row mt-3">
+                <div class="col-md-12 text-center">
+                    <button type="button" id="submitBtn" class="btn btn-primary">Submit Vote</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("submitBtn").addEventListener("click", function() {
+            if (confirm("Are you sure you want to submit your vote?")) {
+                // If the user confirms, submit the form
+                document.getElementById("voteForm").submit();
+            } else {
+                // If the user cancels, do nothing
+            }
+        });
+    </script>
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
